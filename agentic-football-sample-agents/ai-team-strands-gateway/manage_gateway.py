@@ -108,6 +108,26 @@ TOOLS = [
             }
         ],
     },
+    {
+        "name": "evaluate-counter-attack",
+        "lambda_suffix": "evaluate-counter-attack",
+        "description": "Decide whether a fast transition/counter-attack is on after winning the ball",
+        "schema": [
+            {
+                "name": "evaluate_counter_attack",
+                "description": "Assess a counter-attack window: numerical advantage, space ahead, best runner to spring, and urgency",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "game_state": {"type": "object", "description": "Current game state"},
+                        "team_id": {"type": "integer", "description": "Team ID (0 or 1)"},
+                        "player_id": {"type": "integer", "description": "Player ID of the ball-winner/carrier (0-4)"},
+                    },
+                    "required": ["game_state", "team_id", "player_id"],
+                },
+            }
+        ],
+    },
 ]
 
 client = boto3.client("bedrock-agentcore-control", region_name=REGION)

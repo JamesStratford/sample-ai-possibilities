@@ -16,6 +16,7 @@ Available MCP tools:
 - `find_open_space` — Grid-based open space finder by zone (attack/midfield/defense)
 - `evaluate_shot` — Shot success probability with aim recommendation
 - `get_defensive_assignment` — Opponent threat ranking for marking priority
+- `evaluate_counter_attack` — Transition analysis: is a fast break on after winning the ball, which runner to spring, and how urgent
 
 Key differences from balanced team:
 - `MCPClient` connected to AgentCore Gateway for tool access
@@ -51,10 +52,10 @@ but the agent autonomously decides whether and when to call them:
 | Position | Primary Tools | When |
 |----------|--------------|------|
 | GK | `get_defensive_assignment`, `calculate_pass_options` | Identify threats, distribute after saves |
-| DEF | `get_defensive_assignment`, `calculate_pass_options` | Mark opponents, find outlet passes |
-| MID | `calculate_pass_options`, `find_open_space`, `evaluate_shot` | Distribute, position, decide shoot vs pass |
-| FWD1 | `evaluate_shot`, `calculate_pass_options`, `find_open_space` | Shoot decisions, passing under pressure |
-| FWD2 | `evaluate_shot`, `calculate_pass_options`, `find_open_space` | Shoot decisions, attacking runs |
+| DEF | `get_defensive_assignment`, `calculate_pass_options`, `evaluate_counter_attack` | Mark opponents, find outlet passes, launch the break on winning the ball |
+| MID | `calculate_pass_options`, `find_open_space`, `evaluate_shot`, `evaluate_counter_attack` | Distribute, position, decide shoot vs pass, spring the counter |
+| FWD1 | `evaluate_shot`, `calculate_pass_options`, `find_open_space`, `evaluate_counter_attack` | Shoot decisions, passing under pressure, runs on the break |
+| FWD2 | `evaluate_shot`, `calculate_pass_options`, `find_open_space`, `evaluate_counter_attack` | Shoot decisions, attacking runs, runs on the break |
 
 ## Prerequisites
 
