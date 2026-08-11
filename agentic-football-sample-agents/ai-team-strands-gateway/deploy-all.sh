@@ -31,7 +31,7 @@ LAMBDA_ROLE_NAME="afwc-gateway-tool-lambda-role"
 GW_ROLE_NAME="AfwcGatewayExecutionRole"
 
 ALL_AGENTS=("ai-gk" "ai-def" "ai-mid" "ai-fwd1" "ai-fwd2")
-TOOLS=("calculate_pass_options" "evaluate_shot" "find_open_space" "get_defensive_assignment")
+TOOLS=("calculate_pass_options" "evaluate_shot" "find_open_space" "get_defensive_assignment" "evaluate_counter_attack")
 
 if [ -n "$1" ]; then
   AGENTS=("$1")

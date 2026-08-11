@@ -45,7 +45,7 @@ if ($AgentName) {
     }
     $allAgents = @($AgentName)
 }
-$TOOLS = @("calculate_pass_options", "evaluate_shot", "find_open_space", "get_defensive_assignment")
+$TOOLS = @("calculate_pass_options", "evaluate_shot", "find_open_space", "get_defensive_assignment", "evaluate_counter_attack")
 
 Write-Host ""
 Write-Host "=========================================="
